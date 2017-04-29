@@ -1,0 +1,80 @@
+/*Basic settings*/
+body{
+	font-size: 10px;
+}
+a:focus{
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: 'VEFlomasticaCyrillic';
+	src: url('../fonts/VEFlomasticaCyrillic.eot');
+	src: url('../fonts/VEFlomasticaCyrillic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/VEFlomasticaCyrillic.woff2') format('woff2'),
+		url('../fonts/VEFlomasticaCyrillic.woff') format('woff'),
+		url('../fonts/VEFlomasticaCyrillic.ttf') format('truetype'),
+		url('../fonts/VEFlomasticaCyrillic.svg#VEFlomasticaCyrillic') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+/*fonts*/
+.main{
+	font-family: 'VEFlomasticaCyrillic';
+}
+
+.main-screen{
+	background: url('../img/main-bg.jpg');
+	width: 100vw;
+	height: 100vh;
+	&_link{
+		display: inline-block;
+		margin-top: 10%;
+		margin-left: 30%;
+		a{
+		.main;
+		text-decoration: none;
+		font-size: 6rem;
+		}
+	}
+}
+.popup{
+	width: 60rem;
+	height: 45rem;
+	background: url('../img/popup.jpg') no-repeat center center;
+	background-size: 60rem 45rem;
+	position: fixed;
+	left:50%;
+	top: 15%;
+	transform: translateX(-50%);
+	display: none;
+	&-close{
+		position: absolute;
+		top: .5rem;
+		right: 1rem;
+		font-size: 3rem;
+		text-decoration: none;
+		border:2px solid blue;
+		border-radius: 50px;
+		line-height: .7;
+		padding: .5rem;
+		background-color: #fff;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+	&-overlay{
+		top: 0;left: 0;
+		background-color: rgba(0,0,0,.6);
+		position: fixed;
+		width: 100vw;height: 100vh;
+		display: none;
+		&:target{
+			& + .popup{
+				display: block;
+				box-shadow: 3px 3px 10px rgba(0,0,0,.6);
+			}
+			display: block;	
+		}
+	}
+}
